@@ -1,13 +1,14 @@
 #!/usr/bin/env ruby -wU
 require 'checkout'
 
-puts "Great! Your store is now oppened. Type any key to start"
+puts "Great! Your store is now oppened."
 print "\n"
 puts 'Avaiable commands are:'
 puts "'scan <CODE>' to scan"
 puts "'total' to calculate the total"
 puts "'exit' to close the app"
 print "\n"
+puts "Type any key to start"
 
 pricing_rules = [TwoForOne.new('CN'), BulkPurchase.new('PT')]
 checkout = Checkout.new pricing_rules
