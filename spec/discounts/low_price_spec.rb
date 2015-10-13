@@ -9,7 +9,10 @@ RSpec.describe LowPrice do
   end
 
   it "returns the right discount" do
-    products = [Potatoe.new, Potatoe.new]
+    products = []
+    (1..2).each do |i|
+      products << Potatoe.new
+    end
     expect(@discount.in products).to eq 0
   end
 

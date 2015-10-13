@@ -1,11 +1,11 @@
 class PricingRule
 
-  def register_product(code)
+  def initialize(code)
     @code = code
   end
 
   def is_true_for?(products)
-    false
+    raise NotImplementedError
   end
 
   def valid_products(products)

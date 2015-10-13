@@ -9,13 +9,16 @@ RSpec.describe BlackChocolate do
   end
 
   it "returns the right discount" do
-    products = [BlackChocolate.new, BlackChocolate.new]
-    expect(@discount.in products).to eq products.first.price
+    products = [BlackChocolate.new]
+    expect(@discount.in products).to eq 0
   end
 
   it "returns the right discount" do
-    products = [BlackChocolate.new]
-    expect(@discount.in products).to eq 0
+    products = []
+    (1..2).each do |i|
+      products << BlackChocolate.new
+    end
+    expect(@discount.in products).to eq products.first.price
   end
 
   it "returns the right discount" do

@@ -6,11 +6,7 @@ require 'rules/bulk_purchase'
 RSpec.describe Checkout do
 
   before :each do
-    two_for_one = TwoForOne.new
-    two_for_one.register_product 'CN'
-    bulk_purchase = BulkPurchase.new
-    bulk_purchase.register_product 'PT'
-    pricing_rules = [bulk_purchase, two_for_one]
+    pricing_rules = [TwoForOne.new('CN'), BulkPurchase.new('PT')]
     @checkout = Checkout.new pricing_rules
   end
 

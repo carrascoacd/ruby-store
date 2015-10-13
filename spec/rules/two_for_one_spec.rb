@@ -6,13 +6,7 @@ require 'products/tine_wine'
 RSpec.describe TwoForOne do
 
   before :each do
-    @rule = TwoForOne.new
-    @rule.register_product 'CN'
-  end
-
-  it "products comply with the rule" do
-    products = [BlackChocolate.new, BlackChocolate.new]
-    expect(@rule.is_true_for? products).to eq true
+    @rule = TwoForOne.new 'CN'
   end
 
   it "products do not comply with the rule" do
@@ -20,8 +14,19 @@ RSpec.describe TwoForOne do
     expect(@rule.is_true_for? products).to eq false
   end
 
+  it "products comply with the rule" do
+    products = []
+    (1..2).each do |i|
+      products << BlackChocolate.new
+    end
+    expect(@rule.is_true_for? products).to eq true
+  end
+
   it "products do not comply with the rule" do
-    products = [TineWine.new, TineWine.new]
+    products = []
+    (1..2).each do |i|
+      products << TineWine.new
+    end
     expect(@rule.is_true_for? products).to eq false
   end
 
