@@ -1,6 +1,6 @@
 require 'spec_helper'
-require 'one_free'
-require 'black_chocolate'
+require 'discounts/one_free'
+require 'products/black_chocolate'
 
 RSpec.describe BlackChocolate do
 

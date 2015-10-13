@@ -1,6 +1,6 @@
 require 'spec_helper'
-require 'low_price'
-require 'potatoe'
+require 'discounts/low_price'
+require 'products/potatoe'
 
 RSpec.describe LowPrice do
 

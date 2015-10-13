@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'checkout'
-require 'two_for_one'
-require 'bulk_purchase'
+require 'rules/two_for_one'
+require 'rules/bulk_purchase'
 
 RSpec.describe Checkout do
 

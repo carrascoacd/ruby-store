@@ -1,4 +1,4 @@
-require 'pricing_rule'
+require 'rules/pricing_rule'
 
 class BulkPurchase < PricingRule
 

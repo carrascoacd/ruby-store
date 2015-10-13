@@ -1,6 +1,6 @@
-require 'black_chocolate'
-require 'tine_wine'
-require 'potatoe'
+require 'products/black_chocolate'
+require 'products/tine_wine'
+require 'products/potatoe'
 
 class ProductFactory
 

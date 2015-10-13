@@ -1,7 +1,7 @@
-require 'two_for_one'
-require 'bulk_purchase'
-require 'low_price'
-require 'one_free'
+require 'rules/two_for_one'
+require 'rules/bulk_purchase'
+require 'discounts/low_price'
+require 'discounts/one_free'
 
 class DiscountFactory
 

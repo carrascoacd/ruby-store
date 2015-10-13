@@ -1,7 +1,7 @@
 require 'spec_helper'
-require 'two_for_one'
-require 'black_chocolate'
-require 'tine_wine'
+require 'rules/two_for_one'
+require 'products/black_chocolate'
+require 'products/tine_wine'
 
 RSpec.describe TwoForOne do
 

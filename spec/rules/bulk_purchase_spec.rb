@@ -1,6 +1,6 @@
 require 'spec_helper'
-require 'bulk_purchase'
-require 'black_chocolate'
+require 'rules/bulk_purchase'
+require 'products/black_chocolate'
 
 RSpec.describe BulkPurchase do
 

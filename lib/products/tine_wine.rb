@@ -1,4 +1,4 @@
-require 'product'
+require 'products/product'
 
 class TineWine < Product
 

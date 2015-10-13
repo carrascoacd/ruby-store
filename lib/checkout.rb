@@ -1,5 +1,5 @@
-require 'discount_factory'
-require 'product_factory'
+require 'discounts/discount_factory'
+require 'products/product_factory'
 
 class Checkout
 

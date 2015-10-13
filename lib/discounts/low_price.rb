@@ -1,4 +1,4 @@
-require 'discount'
+require 'discounts/discount'
 
 class LowPrice < Discount
 
