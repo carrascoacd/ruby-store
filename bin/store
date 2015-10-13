@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby -wU
+require 'checkout'
+
+puts "Great! Your store is now oppend. Type any key to start"
+print "\n"
+puts 'Avaiable commands are:'
+puts "'scan CODE' to scan"
+puts "'total' to calculate the total"
+puts "'exit' to close the app"
+print "\n"
+
+two_for_one = TwoForOne.new
+two_for_one.register_product 'CN'
+bulk_purchase = BulkPurchase.new
+bulk_purchase.register_product 'PT'
+pricing_rules = [bulk_purchase, two_for_one]
+checkout = Checkout.new pricing_rules
+
+input = gets.chomp
+if input
+  puts "Now you scan products"
+  input = gets.chomp
+  while input != 'exit' and input != 'total'
+    match = input.match(/scan (\w+)/)
+    if match and match.size == 2
+      checkout.scan match[1]
+      puts 'Product ' << match[1] << ' scanned'
+    end
+    input = gets.chomp
+  end
+  if input == 'total'
+    puts "Total: " << checkout.total.to_s
+  end
+end
+puts "Bye!"
