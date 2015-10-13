@@ -54,9 +54,10 @@ RSpec.describe Checkout do
     expect(@checkout.total).to eq 18.00
   end
 
-  # it "throw an error when scanning a non valid product" do
-  #   # @checkout.scan 'invalid_code'
-  #   # expect{Object.non_existent_message}.to raise_error(NameError)
-  # end
+  it "throws an error when scanning a non valid product" do
+    expect{
+      @checkout.scan 'my_cat!'
+    }.to raise_error(Exceptions::NonValidProductError)
+  end
 
 end

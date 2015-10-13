@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby -wU
 require 'checkout'
 
-puts "Great! Your store is now oppend. Type any key to start"
+puts "Great! Your store is now oppened. Type any key to start"
 print "\n"
 puts 'Avaiable commands are:'
-puts "'scan CODE' to scan"
+puts "'scan <CODE>' to scan"
 puts "'total' to calculate the total"
 puts "'exit' to close the app"
 print "\n"
@@ -23,8 +23,12 @@ if input
   while input != 'exit' and input != 'total'
     match = input.match(/scan (\w+)/)
     if match and match.size == 2
-      checkout.scan match[1]
-      puts 'Product ' << match[1] << ' scanned'
+      begin
+        checkout.scan match[1]
+        puts 'Product ' << match[1] << ' scanned'
+      rescue Exception => e
+        puts e.to_s
+      end
     end
     input = gets.chomp
   end

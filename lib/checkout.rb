@@ -1,5 +1,6 @@
 require 'discounts/discount_factory'
 require 'products/product_factory'
+require 'exceptions'
 
 class Checkout
 
@@ -10,6 +11,7 @@ class Checkout
 
   def scan(code)
     product = ProductFactory.build_product_for code
+    raise Exceptions::NonValidProductError, "#{code} is not in the system" unless product
     @products << product
   end
 

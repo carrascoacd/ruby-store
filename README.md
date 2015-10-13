@@ -1,7 +1,7 @@
 # Store 
 A gem like application that shows OO principles & the TDD approach.
 
-### Steps to install:
+### Steps to install
 - clone the repo
 - go to the project root directory
 - `bundle install`
